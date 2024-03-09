@@ -1,0 +1,13 @@
+C:\Users\Felipe Bill\git\code041\framework\src\com\code041\framework\domain\service\AbstractService.java
+C:\Users\Felipe Bill\git\code041\framework\src\com\code041\framework\controller\dto\DTOInterface.java
+C:\Users\Felipe Bill\git\code041\framework\src\com\code041\framework\exception\BusinessRuleException.java
+C:\Users\Felipe Bill\git\code041\framework\src\com\code041\framework\controller\AbstractRestController.java
+C:\Users\Felipe Bill\git\code041\framework\src\com\code041\framework\security\AbstractCustomSecurityConfig.java
+C:\Users\Felipe Bill\git\code041\framework\src\com\code041\framework\controller\FindAll.java
+C:\Users\Felipe Bill\git\code041\framework\src\com\code041\framework\domain\model\AbstractModel.java
+C:\Users\Felipe Bill\git\code041\framework\src\com\code041\framework\domain\usecase\businessrule\BusinessRuleInterface.java
+C:\Users\Felipe Bill\git\code041\framework\src\com\code041\framework\domain\usecase\AbstractUseCase.java
+C:\Users\Felipe Bill\git\code041\framework\src\com\code041\framework\controller\FindById.java
+C:\Users\Felipe Bill\git\code041\framework\src\com\code041\framework\controller\RestControllerInterface.java
+C:\Users\Felipe Bill\git\code041\framework\src\com\code041\framework\documentation\CustomOpenApiConfigInterface.java
+C:\Users\Felipe Bill\git\code041\framework\src\com\code041\framework\exception\CustomErrorHandlerInterface.java
