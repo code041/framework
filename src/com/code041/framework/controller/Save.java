@@ -12,9 +12,9 @@ import org.springframework.web.util.UriComponentsBuilder;
 
 import com.code041.framework.controller.dto.DTOInterface;
 import com.code041.framework.controller.form.FormInterface;
-import com.code041.framework.domain.model.Model;
+import com.code041.framework.domain.model.JPAEntity;
 
-public interface Save<MODEL extends Model, FORM extends FormInterface<MODEL>, DTO extends DTOInterface<MODEL>>
+public interface Save<MODEL extends JPAEntity, FORM extends FormInterface<MODEL>, DTO extends DTOInterface<MODEL>>
 		extends RestControllerInterface<MODEL>, DTOInterface<MODEL> {
 
 	@PostMapping
@@ -27,7 +27,7 @@ public interface Save<MODEL extends Model, FORM extends FormInterface<MODEL>, DT
 		DTOInterface<MODEL> dto = map(entity);
 		return ResponseEntity.created(uri).body(dto);
 	}
-	
+
 	abstract String path();
 
 }

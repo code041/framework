@@ -7,9 +7,9 @@ import java.util.stream.Collectors;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageImpl;
 
-import com.code041.framework.domain.model.Model;
+import com.code041.framework.domain.model.JPAEntity;
 
-public interface DTOInterface<T extends Model> {
+public interface DTOInterface<T extends JPAEntity> {
 
 	DTOInterface<T> map(T entity);
 

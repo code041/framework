@@ -6,11 +6,11 @@ import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.data.jpa.repository.JpaRepository;
 
-import com.code041.framework.domain.model.Model;
+import com.code041.framework.domain.model.JPAEntity;
 
 import jakarta.persistence.EntityNotFoundException;
 
-public abstract class AbstractService<T extends Model> {
+public abstract class AbstractService<T extends JPAEntity> {
 
 	protected abstract JpaRepository<T, Long> getRepository();
 

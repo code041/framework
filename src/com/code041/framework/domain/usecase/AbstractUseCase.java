@@ -1,14 +1,8 @@
 package com.code041.framework.domain.usecase;
 
-import java.util.List;
+import com.code041.framework.domain.model.JPAEntity;
 
-import org.springframework.beans.factory.annotation.Autowired;
-
-import com.code041.framework.domain.model.Model;
-import com.code041.framework.domain.service.AbstractService;
-import com.code041.framework.domain.usecase.businessrule.BusinessRuleInterface;
-
-public abstract class AbstractUseCase<T extends Model> {
+public abstract class AbstractUseCase<T extends JPAEntity> {
 //
 //	@Autowired
 //	protected AbstractService<T> service;

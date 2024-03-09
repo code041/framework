@@ -5,9 +5,9 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 
 import com.code041.framework.controller.dto.DTOInterface;
-import com.code041.framework.domain.model.Model;
+import com.code041.framework.domain.model.JPAEntity;
 
-public interface FindById<MODEL extends Model> extends RestControllerInterface<MODEL>, DTOInterface<MODEL> {
+public interface FindById<MODEL extends JPAEntity> extends RestControllerInterface<MODEL>, DTOInterface<MODEL> {
 
 	@GetMapping("/{id}")
 	default ResponseEntity<DTOInterface<MODEL>> findById(@PathVariable final Long id) {

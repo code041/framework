@@ -8,9 +8,9 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
 
 import com.code041.framework.controller.dto.DTOInterface;
-import com.code041.framework.domain.model.Model;
+import com.code041.framework.domain.model.JPAEntity;
 
-public interface FindAll<MODEL extends Model> extends RestControllerInterface<MODEL>, DTOInterface<MODEL> {
+public interface FindAll<MODEL extends JPAEntity> extends RestControllerInterface<MODEL>, DTOInterface<MODEL> {
 
 	@GetMapping
 	default ResponseEntity<Page<DTOInterface<MODEL>>> findAll(
