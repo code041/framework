@@ -96,6 +96,21 @@
 		</dependency>
 	</dependencies>
 
+	<repositories>
+    <repository>
+        <id>github</id>
+        <url>https://maven.pkg.github.com/code041/</url>
+    </repository>
+</repositories>
+
+		<distributionManagement>
+    <repository>
+      <id>github</id>
+      <name>GitHub Packages</name>
+      <url>https://maven.pkg.github.com/code041/framework</url>
+    </repository>
+  </distributionManagement>
+
 	<build>
 		<sourceDirectory>src</sourceDirectory>
 		<plugins>
