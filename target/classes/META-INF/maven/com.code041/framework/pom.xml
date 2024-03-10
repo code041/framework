@@ -10,7 +10,7 @@
 	</parent>
 	<groupId>com.code041</groupId>
 	<artifactId>framework</artifactId>
-	<version>0.0.4-SNAPSHOT</version>
+	<version>0.0.5-SNAPSHOT</version>
 	<name>Code 041 Framerwork</name>
 	<properties>
 		<java.version>17</java.version>
@@ -98,8 +98,8 @@
 
 	<repositories>
     <repository>
-        <id>github</id>
-        <url>https://maven.pkg.github.com/code041/</url>
+        <id>Code041 - Bill of materials</id>
+        <url>https://github.com/code041/bom/packages/</url>
     </repository>
 </repositories>
 
