@@ -98,8 +98,8 @@
 
 	<repositories>
     <repository>
-        <id>Code041 - Bill of materials</id>
-        <url>https://github.com/code041/bom/packages/</url>
+        <id>github</id>
+        <url>https://maven.pkg.github.com/code041/</url>
     </repository>
 </repositories>
 
