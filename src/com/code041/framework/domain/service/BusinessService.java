@@ -2,6 +2,7 @@ package com.code041.framework.domain.service;
 
 import java.util.Optional;
 
+import org.modelmapper.ModelMapper;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.data.jpa.repository.JpaRepository;
@@ -10,12 +11,16 @@ import com.code041.framework.domain.model.JPAEntity;
 
 import jakarta.persistence.EntityNotFoundException;
 
-public abstract class AbstractService<T extends JPAEntity> {
+public abstract class BusinessService<T extends JPAEntity> {
 
-	protected abstract JpaRepository<T, Long> getRepository();
+	protected JpaRepository<T, Long> repository;
+
+	public BusinessService(JpaRepository<T, Long> repository) {
+		this.repository = repository;
+	}
 
 	public final T findById(final Long id) {
-		Optional<T> optional = getRepository().findById(id);
+		Optional<T> optional = repository.findById(id);
 		if (optional.isEmpty()) {
 			throw new EntityNotFoundException();
 		}
@@ -23,20 +28,21 @@ public abstract class AbstractService<T extends JPAEntity> {
 	}
 
 	public final Page<T> findAll(Pageable pageable) {
-		return getRepository().findAll(pageable);
+		return repository.findAll(pageable);
 	}
 
-	protected final void save(T entity) {
-		getRepository().save(entity);
+	public final void save(T entity) {
+		repository.save(entity);
 	}
 
-	protected final void update(Long id, T entity) {
+	public final void update(Long id, T entity) {
 		T managedJpaEntity = this.findById(id);
-		getRepository().save(managedJpaEntity);
+		repository.save(managedJpaEntity);
 	}
 
-	protected final void delete(Long id) {
+	public final void delete(Long id) {
 		T managedJpaEntity = this.findById(id);
-		getRepository().delete(managedJpaEntity);
+		repository.delete(managedJpaEntity);
 	}
+
 }

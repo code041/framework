@@ -10,21 +10,20 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.ResponseStatus;
 import org.springframework.web.util.UriComponentsBuilder;
 
-import com.code041.framework.controller.dto.DTOInterface;
+import com.code041.framework.controller.dto.DataTransferObject;
 import com.code041.framework.controller.form.FormInterface;
 import com.code041.framework.domain.model.JPAEntity;
 
-public interface Save<MODEL extends JPAEntity, FORM extends FormInterface<MODEL>, DTO extends DTOInterface<MODEL>>
-		extends RestControllerInterface<MODEL>, DTOInterface<MODEL> {
+public interface Save<MODEL extends JPAEntity, FORM extends FormInterface<MODEL>, DTO extends DataTransferObject<MODEL>>
+		extends RestControllerInterface<MODEL>, DataTransferObject<MODEL> {
 
 	@PostMapping
 	@ResponseStatus(HttpStatus.CREATED)
 	@Transactional
-	default ResponseEntity<DTOInterface<MODEL>> save(@RequestBody FORM form, UriComponentsBuilder uriBuilder) {
+	default ResponseEntity<DataTransferObject<MODEL>> save(@RequestBody FORM form, UriComponentsBuilder uriBuilder) {
 		MODEL entity = form.map();
-		getEventPublisher().publishEvent(entity);
 		URI uri = uriBuilder.path(path() + "/{id}").buildAndExpand(entity.getId()).toUri();
-		DTOInterface<MODEL> dto = map(entity);
+		DataTransferObject<MODEL> dto = map(entity);
 		return ResponseEntity.created(uri).body(dto);
 	}
 

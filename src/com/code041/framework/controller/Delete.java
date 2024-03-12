@@ -12,8 +12,7 @@ public interface Delete<MODEL extends JPAEntity> extends RestControllerInterface
 	@DeleteMapping("/{id}")
 	@Transactional
 	default ResponseEntity<?> delete(@PathVariable final Long id) {
-		getEventPublisher().publishEvent(id);
-		// getService().delete(id);
+		getService().delete(id);
 		return ResponseEntity.ok().build();
 	}
 
